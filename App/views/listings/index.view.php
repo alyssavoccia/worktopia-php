@@ -5,7 +5,15 @@
 <!-- Job Listings -->
 <section>
   <div class="container mx-auto p-4 mt-4">
-    <div class="text-center text-3xl mb-4 font-bold border border-gray-300 p-3">All Jobs</div>
+    <div class="text-center text-3xl mb-4 font-bold border border-gray-300 p-3">
+      <?php if (isset($keywords) && strlen($keywords) > 0) : ?>
+        Search Results for: <?= htmlspecialchars($keywords) ?>
+      <?php elseif (isset($location) && strlen($location) > 0) : ?>
+        Search Results for: <?= htmlspecialchars(strtoupper($location)) ?>
+      <?php else : ?>
+        All Jobs
+      <?php endif; ?>
+    </div>
     <?= loadPartial('message') ?>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
       <?php foreach ($listings as $listing) : ?>
@@ -17,7 +25,6 @@
                 <li class="mb-2"><strong>Salary:</strong> <?= formatSalary($listing->salary) ?></li>
                 <li class="mb-2">
                   <strong>Location:</strong> <?= $listing->city ?>, <?= $listing->state ?>
-                  <span class="text-xs bg-blue-500 text-white rounded-full px-2 py-1 ml-2">Local</span>
                 </li>
                 <?php if (!empty($listing->tags)) : ?>
                   <li class="mb-2">
