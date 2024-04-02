@@ -1,4 +1,3 @@
-<!-- Bottom Banner -->
 <section class="container mx-auto my-6">
   <div class="bg-blue-800 text-white rounded p-4 flex items-center justify-between">
     <div>

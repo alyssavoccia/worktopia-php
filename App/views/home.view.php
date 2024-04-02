@@ -3,7 +3,6 @@
 <?= loadPartial('showcase-search') ?>
 <?= loadPartial('top-banner') ?>
 
-<!-- Job Listings -->
 <section>
   <div class="container mx-auto p-4 mt-4">
     <div class="text-center text-3xl mb-4 font-bold border border-gray-300 p-3">Recent Jobs</div>
@@ -17,7 +16,6 @@
               <li class="mb-2"><strong>Salary:</strong> <?= formatSalary($listing->salary) ?></li>
               <li class="mb-2">
                 <strong>Location:</strong> <?= $listing->city ?>, <?= $listing->state ?>
-                <span class="text-xs bg-blue-500 text-white rounded-full px-2 py-1 ml-2">Local</span>
               </li>
               <?php if (!empty($listing->tags)) : ?>
                 <li class="mb-2">

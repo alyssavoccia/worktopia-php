@@ -1,4 +1,3 @@
-<!-- Showcase -->
 <section class="showcase relative bg-cover bg-center bg-no-repeat h-72 flex items-center">
   <div class="overlay"></div>
   <div class="container mx-auto text-center z-10">
